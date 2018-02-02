@@ -11,7 +11,7 @@ cd /usr/share/www/speedtest/
 wget https://github.com/lzcykevin/getspeedtest/raw/master/speed.tar.gz
 tar -xvzf speed.tar.gz
 tar -xvzf speedtest.tar.gz
-sed -i 's/xxxxxx/$DomainUrl/'  speedtest.con
+sed -i "s/xxxxxx/$DomainUrl/"  speedtest.conf
 mv speedtest.conf /etc/nginx/conf.d/
 rm -rf speed.tar.gz
 rm -rf speedtest.tar.gz
