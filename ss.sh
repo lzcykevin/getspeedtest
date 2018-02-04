@@ -128,7 +128,12 @@ install_node(){
 	echo 'iptables-restore /etc/sysconfig/iptables' >> /etc/rc.local
 	echo "/usr/bin/supervisord -c /etc/supervisord.conf" >> /etc/rc.local
 	echo '/root/shadowsocks/run.sh' >> /etc/rc.local
+	echo '#!/bin/sh' >> /etc/init.d/ssr
+	echo '/root/shadowsocks/run.sh' >> /etc/init.d/ssr
 	chmod +x /etc/rc.d/rc.local
+	chmod +x /etc/init.d/ssr
+	update-rc.d ssr defaults 95
+	cleaer
 	echo "#############################################################"
 	echo "# 安装完成，节点即将重启使配置生效                          #"
 	echo "# Github: https://github.com/mmmwhy/ss-panel-and-ss-py-mu   #"
