@@ -61,7 +61,7 @@ install_centos_ssr(){
 
 install_ubuntu_ssr(){
 	apt-get update -y
-	apt-get upgrade -y
+	#apt-get upgrade -y
 	apt -y remove httpd
 	apt-get install supervisor lsof -y
 	apt-get install build-essential wget -y
@@ -134,6 +134,10 @@ install_node(){
 	chmod +x /etc/rc.d/rc.local
 	chmod +x /etc/init.d/ssr
 	update-rc.d ssr defaults 95
+	wget --no-check-certificate -qO /tmp/appex.sh "https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh"
+	mv /tmp/appex.sh .
+	chmod +x appex.sh
+	echo y | bash appex.sh install
 	clear
 	echo "#############################################################"
 	echo "# 安装完成，节点即将重启使配置生效                          #"
