@@ -123,6 +123,7 @@ install_node(){
 	iptables -X  
 	iptables -I INPUT -p tcp -m tcp --dport 22:65535 -j ACCEPT
 	iptables -I INPUT -p udp -m udp --dport 22:65535 -j ACCEPT
+	mkdir /etc/sysconfig/
 	iptables-save >/etc/sysconfig/iptables
 	iptables-save >/etc/sysconfig/iptables
 	echo 'iptables-restore /etc/sysconfig/iptables' >> /etc/rc.local
@@ -133,7 +134,7 @@ install_node(){
 	chmod +x /etc/rc.d/rc.local
 	chmod +x /etc/init.d/ssr
 	update-rc.d ssr defaults 95
-	cleaer
+	clear
 	echo "#############################################################"
 	echo "# 安装完成，节点即将重启使配置生效                          #"
 	echo "# Github: https://github.com/mmmwhy/ss-panel-and-ss-py-mu   #"
