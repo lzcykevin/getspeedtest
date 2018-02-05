@@ -133,6 +133,7 @@ install_node(){
 	echo '#!/bin/sh' >> /etc/init.d/ssr
 	echo '/root/shadowsocks/run.sh' >> /etc/init.d/ssr
 	chmod +x /etc/rc.d/rc.local
+	chmod +x /etc/rc.local
 	chmod +x /etc/init.d/ssr
 	update-rc.d ssr defaults 95
 	wget --no-check-certificate -qO /tmp/appex.sh "https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh"
