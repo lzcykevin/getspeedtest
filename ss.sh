@@ -113,6 +113,7 @@ install_node(){
 	UserNODE_ID=${UserNODE_ID:-"3"}
 	sed -i '2d' /root/shadowsocks/userapiconfig.py
 	sed -i "2a\NODE_ID = ${UserNODE_ID}" /root/shadowsocks/userapiconfig.py
+	sed -i "s/SPEEDTEST = 6/SPEEDTEST = 99999/" /root/shadowsocks/userapiconfig.py
 	# 启用supervisord
 	supervisorctl shutdown
 	#某些机器没有echo_supervisord_conf 
